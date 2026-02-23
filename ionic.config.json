@@ -1,0 +1,7 @@
+{
+  "name": "Medi-Ai",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
