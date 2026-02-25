@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { SplashScreenComponent } from './splash-screen/splash-screen.component';
-import { OnboardingComponent } from './onboarding/onboarding.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SplashScreenComponent,
+    loadChildren: () =>
+      import('./Common/commons-module').then((m) => m.CommonsModule),
   },
   {
-    path: 'onboarding',
-    component: OnboardingComponent,
-  }
+    path: 'doctor',
+    loadChildren: () =>
+      import('./Doctor/doctor-module').then((m) => m.DoctorModule),
+  },
+  {
+    path: 'patient',
+    loadChildren: () =>
+      import('./Patient/patient-module').then((m) => m.PatientModule),
+  },
 ];
 
 @NgModule({

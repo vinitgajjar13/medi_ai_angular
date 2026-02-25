@@ -6,22 +6,19 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SplashScreenComponent } from './splash-screen/splash-screen.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-// standalone components need not be declared here
-import { OnboardingComponent } from './onboarding/onboarding.component';
+import { DoctorModule } from './Doctor/doctor-module';
+import { PatientModule } from './Patient/patient-module';
+import { CommonsModule } from './Common/commons-module';
 
 @NgModule({
-  declarations: [AppComponent, SplashScreenComponent, OnboardingComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    CommonsModule,
+    DoctorModule,
+    PatientModule,
     AppRoutingModule,
-    CommonModule,
-    FormsModule,
-    // standalone components can be imported if needed, but routing loads them directly
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

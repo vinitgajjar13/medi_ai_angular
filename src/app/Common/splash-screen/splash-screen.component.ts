@@ -31,6 +31,6 @@ export class SplashScreenComponent implements OnInit {
     // auto-redirect once animation is complete
     setTimeout(() => {
       this.router.navigate(['/onboarding']);
-    }, 2200);
+    }, 2500);
   }
 }

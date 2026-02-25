@@ -1,0 +1,243 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: #1a1a1a;
+}
+
+.selectrole-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.logo-section {
+  margin-bottom: 2rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #008080; /* Teal color from design */
+  margin: 0;
+
+  span {
+    color: #1a1a1a;
+  }
+}
+
+/* Illustration Section */
+.illustration-section {
+  margin-bottom: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.illustration-wrapper {
+  width: 80%;
+  max-width: 250px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, #004d61 0%, #00222b 100%);
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  animation: morph 6s ease-in-out infinite;
+}
+
+.illustration-img {
+  width: 100%;
+  height: auto;
+  transform: scale(1.3);
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+  }
+  50% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
+  }
+}
+
+/* Message Section */
+.message-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #4a5568;
+    margin: 0;
+  }
+}
+
+/* Roles Section */
+.roles-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.role-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 24px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.patient {
+  background-color: #ffffff;
+  border: 1.5px solid #02434e;
+  color: #1a1a1a;
+  box-shadow: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #02434e;
+    color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 67, 78, 0.3);
+
+    .role-info p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .role-icon .heart-icon-bg {
+      background-color: #ffffff;
+      color: #ff2d55;
+      border-color: transparent;
+    }
+  }
+
+  .role-icon {
+    .heart-icon-bg {
+      background-color: #f7fafc;
+      color: #ff2d55;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  p {
+    color: #4a5568;
+    transition: color 0.3s ease;
+  }
+}
+
+.doctor {
+  background-color: #ffffff;
+  border: 1.5px solid #02434e;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #02434e;
+    color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 67, 78, 0.3);
+
+    .role-info p {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .role-icon .stethoscope-icon-bg {
+      background-color: #ffffff;
+      color: #02434e;
+      border-color: transparent;
+    }
+  }
+
+  .role-icon {
+    .stethoscope-icon-bg {
+      background-color: #f7fafc;
+      color: #02434e;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      svg {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+
+  p {
+    color: #4a5568;
+    transition: color 0.3s ease;
+  }
+}
+
+.role-info {
+  flex: 1;
+  padding-right: 1rem;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: 400;
+    margin: 0;
+  }
+}

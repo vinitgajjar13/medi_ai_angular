@@ -1,0 +1,286 @@
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  overflow-y: auto;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.safe-area-top {
+  height: env(safe-area-inset-top, 20px);
+}
+
+.safe-area-bottom {
+  height: env(safe-area-inset-bottom, 20px);
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #008080;
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+
+  span {
+    color: #1a1a1a;
+  }
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 1.2rem;
+    color: #000;
+    font-family: "Outfit", sans-serif;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #8a8a8a;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+}
+
+/* Form Styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+
+  input {
+    width: 100%;
+    height: 58px;
+    padding: 0 1.25rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 16px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    background-color: #ffffff;
+    color: #1a1a1a;
+
+    &::placeholder {
+      color: #b5b5b5;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #008080;
+    }
+
+    &.ng-invalid.ng-touched {
+      border-color: #ff3b30;
+    }
+  }
+
+  .error-msg {
+    color: #ff3b30;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: -0.4rem;
+  }
+}
+
+.password-input-wrapper {
+  position: relative;
+
+  .toggle-password {
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #b5b5b5;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  color: #023640;
+  font-weight: 600;
+
+  input {
+    width: 24px;
+    height: 24px;
+    appearance: none;
+    border: 1px solid #dcdcdc;
+    border-radius: 50%;
+    margin: 0;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    transition: all 0.2s;
+
+    &:checked {
+      background-color: #004d61;
+      border-color: #004d61;
+    }
+  }
+}
+
+.forgot-password {
+  color: #718096;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.sign-in-btn {
+  height: 64px;
+  background-color: #004344;
+  color: #ffffff;
+  border: none;
+  border-radius: 32px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Social Login Section */
+.social-login-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  color: #8a8a8a;
+  margin: 2.5rem 0;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #f0f0f0;
+  }
+
+  span {
+    background-color: #ffffff;
+    padding: 0 0.5rem;
+    text-transform: lowercase;
+  }
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.footer-section {
+  margin-top: auto;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #8a8a8a;
+  padding-bottom: 2rem;
+
+  a {
+    color: #008080;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

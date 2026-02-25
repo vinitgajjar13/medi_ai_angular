@@ -46,8 +46,8 @@ export class OnboardingComponent implements OnInit {
     if (this.currentIndex < this.slides.length - 1) {
       this.currentIndex++;
     } else {
-      // last slide, go to home
-      this.router.navigate(['/home']);
+      // last slide, go to selectrole
+      this.router.navigate(['/selectrole']);
     }
   }
 

@@ -1,0 +1,196 @@
+<div class="signup-container">
+  <div class="safe-area-top"></div>
+  <!-- Logo Section -->
+  <div class="logo-section">
+    <div class="logo-wrapper">
+      <img src="assets/logo.png" alt="Medi AI logo" class="logo-img" />
+      <h1 class="logo-text">Medi - <span>AI</span></h1>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <div class="header-section">
+    <h2>Create Your Account</h2>
+    <p>
+      Sign Up To Keep Your Health Records In One Place And Get AI-Assisted
+      Guidance From Real Doctors.
+    </p>
+  </div>
+
+  <!-- Form Section -->
+  <form class="signup-form" [formGroup]="signupForm" (ngSubmit)="signUp()">
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input
+        type="text"
+        id="fullName"
+        placeholder="Enter your name"
+        autocomplete="name"
+        formControlName="fullName"
+      />
+      <div
+        class="error-msg"
+        *ngIf="
+          signupForm.get('fullName')?.invalid &&
+          signupForm.get('fullName')?.touched
+        "
+      >
+        Full name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email address"
+        inputmode="email"
+        autocomplete="email"
+        formControlName="email"
+      />
+      <div
+        class="error-msg"
+        *ngIf="
+          signupForm.get('email')?.invalid && signupForm.get('email')?.touched
+        "
+      >
+        Please enter a valid email address.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <div class="input-wrapper">
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Eg.: +91 1234567890"
+          inputmode="tel"
+          autocomplete="tel"
+          formControlName="phone"
+          (keypress)="onlyNumbers($event)"
+          (input)="onPhoneInput($event)"
+        />
+      </div>
+      <div
+        class="error-msg"
+        *ngIf="
+          signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched
+        "
+      >
+        Numeric phone number is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <div class="select-wrapper">
+        <select id="country" formControlName="country">
+          <option value="" disabled selected>Select your country</option>
+          <option value="india">India</option>
+          <option value="usa">USA</option>
+        </select>
+        <span class="arrow"></span>
+      </div>
+      <div
+        class="error-msg"
+        *ngIf="
+          signupForm.get('country')?.invalid &&
+          signupForm.get('country')?.touched
+        "
+      >
+        Country is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <div class="select-wrapper">
+        <select id="state" formControlName="state">
+          <option value="" disabled selected>Select your state</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="gujarat">Gujarat</option>
+        </select>
+        <span class="arrow"></span>
+      </div>
+      <div
+        class="error-msg"
+        *ngIf="
+          signupForm.get('state')?.invalid && signupForm.get('state')?.touched
+        "
+      >
+        State is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="city">City</label>
+      <div class="select-wrapper">
+        <select id="city" formControlName="city">
+          <option value="" disabled selected>Select your city</option>
+          <option value="mumbai">Mumbai</option>
+          <option value="pune">Pune</option>
+        </select>
+        <span class="arrow"></span>
+      </div>
+      <div
+        class="error-msg"
+        *ngIf="
+          signupForm.get('city')?.invalid && signupForm.get('city')?.touched
+        "
+      >
+        City is required.
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group half">
+        <label for="bloodGroup">Blood Group</label>
+        <input
+          type="text"
+          id="bloodGroup"
+          placeholder="Blood Group"
+          formControlName="bloodGroup"
+        />
+        <div
+          class="error-msg"
+          *ngIf="
+            signupForm.get('bloodGroup')?.invalid &&
+            signupForm.get('bloodGroup')?.touched
+          "
+        >
+          Required.
+        </div>
+      </div>
+
+      <div class="form-group half">
+        <label for="birthDate">Birth Date</label>
+        <input 
+          type="date" 
+          id="birthDate" 
+          formControlName="birthDate" 
+          #birthDate
+          (click)="birthDate.showPicker()"
+        />
+        <div
+          class="error-msg"
+          *ngIf="
+            signupForm.get('birthDate')?.invalid &&
+            signupForm.get('birthDate')?.touched
+          "
+        >
+          Required.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="sign-up-btn">Sign up</button>
+  </form>
+
+  <!-- Footer Section -->
+  <div class="footer-section">
+    <p>Already have an account? <a (click)="goToLogin()">Login</a></p>
+    <div class="safe-area-bottom"></div>
+  </div>
+</div>
