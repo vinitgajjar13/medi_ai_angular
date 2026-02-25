@@ -1,0 +1,33 @@
+<div class="onboarding-container">
+  <div
+    class="slide"
+    *ngFor="let slide of slides; let i = index"
+    [class.active]="i === currentIndex"
+  >
+    <img [src]="slide.img" [alt]="slide.title" />
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="text">
+        <h1>{{ slide.title }}</h1>
+        <p>{{ slide.description }}</p>
+      </div>
+
+      <div class="controls">
+        <button
+          class="skip-btn"
+          (click)="skip()"
+          *ngIf="currentIndex < slides.length - 1"
+        >
+          Skip
+        </button>
+        <button
+          class="next-btn"
+          (click)="next()"
+          [class.get-started]="currentIndex === slides.length - 1"
+        >
+          {{ currentIndex === slides.length - 1 ? "Get Started" : "Next" }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

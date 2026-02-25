@@ -1,3 +1,13 @@
-<p>
-  splash-screen works!
-</p>
+<div class="splash-container">
+  <img
+    src="assets/logo.png"
+    alt="Medi AI logo"
+    [ngClass]="{ visible: logoVisible }"
+    class="logo"
+  />
+
+  <h1 [ngClass]="{ visible: titleVisible }" class="title">Medi - AI</h1>
+  <h2 [ngClass]="{ visible: subtitleVisible }" class="subtitle">
+    The Future Of Care
+  </h2>
+</div>
