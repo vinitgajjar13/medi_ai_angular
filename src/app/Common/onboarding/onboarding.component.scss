@@ -60,11 +60,11 @@
 
 .content {
   width: 100%;
-  padding: 2.5rem 2rem;
+  padding: clamp(1.5rem, 8vh, 3rem) clamp(1.25rem, 5vw, 2.5rem);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: clamp(1rem, 5vh, 2.5rem);
   z-index: 1;
 }
 
@@ -73,15 +73,15 @@
   text-align: left;
 
   h1 {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
     font-weight: 800;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
     letter-spacing: -0.5px;
   }
 
   p {
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
     line-height: 1.5;
     opacity: 0.9;
     font-weight: 400;
@@ -92,17 +92,17 @@
 .controls {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: clamp(1rem, 3vw, 1.5rem);
   width: 100%;
 }
 
 button {
   cursor: pointer;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   transition: all 0.2s ease;
   outline: none;
-  height: 54px;
+  height: clamp(48px, 8vh, 58px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,9 +134,30 @@ button {
 /* ensure readable on larger screens */
 @media (min-width: 768px) {
   .content {
-    max-width: 500px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5vh;
+    margin-bottom: 8vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 360px) {
+  .content {
+    padding-bottom: 2rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .content {
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .text h1 {
+    font-size: 1.6rem;
   }
 }
